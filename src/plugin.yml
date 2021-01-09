@@ -1,0 +1,15 @@
+name: CompassSeeker
+main: main.PluginMain
+version: 1.0
+api-version: 1.16
+
+commands:
+  csget:
+    description: Track other players!
+    usage: /<command>
+  cs:
+    description: Command to start tracking!
+    usage: /<command>
+  csdisable:
+    description: Command to disable compassSeeker
+    usage: /<command>
