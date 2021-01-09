@@ -33,7 +33,8 @@ public class TrackCommand implements CommandExecutor {
                         Tracker.setTargets(p, list);
                         return true;
                     }
-
+                    p.sendMessage(ChatColor.RED + "You don't have the compass!");
+                    return true;
                 }
                 p.sendMessage(ChatColor.RED + "Not enough arguments");
                 return true;

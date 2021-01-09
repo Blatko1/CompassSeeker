@@ -2,6 +2,7 @@ package items;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -21,9 +22,11 @@ public class Tracker {
     public static void updateTracker(Player p){
         HashMap<Double, Player> distanceMap = new HashMap<>();
         for(Player player:map.get(p)){
-            Location loc = player.getLocation();
-            double dist = loc.distance(p.getLocation());
-            distanceMap.put(dist, player);
+            if(!player.getWorld().getEnvironment().equals(World.Environment.NETHER) && !player.getWorld().getEnvironment().equals(World.Environment.NETHER)){
+                Location loc = player.getLocation();
+                double dist = loc.distance(p.getLocation());
+                distanceMap.put(dist, player);
+            }
         }
         List<Double> keys = new ArrayList<Double>(distanceMap.keySet());
         Collections.sort(keys);
